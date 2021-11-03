@@ -43,7 +43,7 @@ export default function App() {
           key={info.id} 
           openDetails={openDetails} 
         />)
-      )} {/** const props = {info: info} */}
+      )} {/** const props = {info: info, key: info.id, openDetails: openDetails} */}
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
