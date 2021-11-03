@@ -26,10 +26,13 @@ export default function App() {
   return (
     <div className='container'>
       <h1>Some of my friends:</h1>
-      {/* start by mapping over the friends array...*/}
+      {friends.map(info => <Friend info={info}/>)} {/** const props = {info: info} */}
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
     </div>
   )
 }
+// for (let i = 0; i < arr.length; i++) {
+//   const info = arr[i]
+// }
