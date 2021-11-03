@@ -27,6 +27,7 @@ export default function App() {
   useEffect(() => {
     axios.get(`${BASE_URL}/friends?api_key=${API_KEY}`)
       .then(res => {
+        console.log(res.data);
         setFriends(res.data);
       })
       .catch(err => {
