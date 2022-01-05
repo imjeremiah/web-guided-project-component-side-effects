@@ -7,8 +7,12 @@ import App from './components/App'
 
 // 👉 Importing our styles
 import './styles.less'
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
 render(
-  <App />,
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>,
   document.querySelector('#root')
 )

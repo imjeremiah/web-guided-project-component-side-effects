@@ -2,6 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { BASE_URL, API_KEY } from '../constants'
 import axios from 'axios'
 
+import styled from 'styled-components';
+
+const StyledDetails = styled.div`
+  transform: scale(w) rotateZ(180deg);
+  background-color: ${pr => pr.theme.primaryColor};
+
+  p {
+    color: ${pr => pr.theme.tertiaryColor};
+  }
+
+  h2 {
+    color: ${pr => pr.theme.secondaryColor};
+  }
+`;
+
 export default function Details(props) {
   const { friendId, close } = props
   const [details, setDetails] = useState(null)
@@ -50,7 +65,7 @@ export default function Details(props) {
   }, [friendId]);
 
   return (
-    <div className='container'>
+    <StyledDetails className='container'>
       <h2>Details (of friend with id {friendId}):</h2>
       {
         details &&
@@ -64,6 +79,6 @@ export default function Details(props) {
         </>
       }
       <button onClick={close}>Close</button>
-    </div>
+    </StyledDetails>
   )
 }
